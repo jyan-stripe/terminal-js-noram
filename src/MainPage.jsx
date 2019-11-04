@@ -271,6 +271,8 @@ class App extends Component {
           // Suppress backend errors since they will be shown in logs
           return;
         }
+      } else if (confirmResult.paymentIntent.status == 'succeeded') {
+        this.pendingPaymentIntentSecret = null;
       }
     }
   };
